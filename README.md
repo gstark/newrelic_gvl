@@ -1,8 +1,6 @@
-# NewrelicGvl
+# NewRelic GVL Stats
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/newrelic_gvl`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Ruby 3.2.0 allows for tracking of GVL status. This gem utilizes that API via [gvltools](https://github.com/Shopify/gvltools) to report GVL status for Sidekiq jobs and Rack requests.
 
 ## Installation
 
@@ -16,7 +14,21 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-TODO: Write usage instructions here
+For rails:
+
+```
+config.middleware.use NewrelicGvl::Rack::Middleware
+```
+
+For sidekiq:
+
+```
+Sidekiq.configure_server do |config|
+  config.server_middleware do |chain|
+    chain.add NewrelicGvl::Sidekiq::Middleware
+  end
+end
+```
 
 ## Development
 
