@@ -10,14 +10,12 @@ Gem::Specification.new do |spec|
 
   spec.summary = "NewRelic middleware that measures time spent waiting on the GVL"
   spec.description = "NewRelic middleware that measures time spent waiting on the GVL"
-  spec.homepage = "https://github.com/gstark"
+  spec.homepage = "https://github.com/gstark/newrelic_gvl"
   spec.required_ruby_version = ">= 2.6.0"
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
-
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/gstark"
-  spec.metadata["changelog_uri"] = "https://github.com/gstark"
+  spec.metadata["source_code_uri"] = "https://github.com/gstark/newrelic_gvl"
+  spec.metadata["changelog_uri"] = "https://github.com/gstark/newrelic_gvl/blob/main/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
