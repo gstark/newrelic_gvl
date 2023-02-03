@@ -1,3 +1,5 @@
+*NOTE: This gem is still in development and untested in a production environment.*
+
 # NewRelic GVL Stats
 
 Ruby 3.2.0 allows for tracking of GVL status. This gem utilizes that API via [gvltools](https://github.com/Shopify/gvltools) to report GVL status for Sidekiq jobs and Rack requests.
