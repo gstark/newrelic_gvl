@@ -26,7 +26,7 @@ For sidekiq:
 
 ```
 Sidekiq.configure_server do |config|
-  config.server_middleware do |chain|
+  config.client_middleware do |chain|
     chain.add NewrelicGvl::Sidekiq::Middleware
   end
 end
