@@ -1,8 +1,8 @@
 require "test_helper"
 
-describe NewrelicGvl::Sidekiq::Middleware do
+describe NewrelicGvl::Sidekiq::ClientMiddleware do
   it "Yields to the middleware" do
-    middleware = NewrelicGvl::Sidekiq::Middleware.new
+    middleware = NewrelicGvl::Sidekiq::ClientMiddleware.new
 
     GVLTools::LocalTimer.expects(:monotonic_time).returns(0.0).twice
 
@@ -16,7 +16,7 @@ describe NewrelicGvl::Sidekiq::Middleware do
   end
 
   it "Sends the wait time to NewRelic" do
-    middleware = NewrelicGvl::Sidekiq::Middleware.new
+    middleware = NewrelicGvl::Sidekiq::ClientMiddleware.new
 
     GVLTools::LocalTimer.expects(:monotonic_time).returns(0.0).twice
 

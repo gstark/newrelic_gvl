@@ -2,10 +2,10 @@ require "gvltools"
 
 module NewrelicGvl
   module Sidekiq
-    class Middleware
-      include Sidekiq::ClientMiddleware if defined?(Sidekiq::ClientMiddleware)
+    class ServerMiddleware
+      include ::Sidekiq::ServerMiddleware if defined?(::Sidekiq::ServerMiddleware)
 
-      def call(_worker, _job, _queue, _redis_pool)
+      def call(*)
         before = GVLTools::LocalTimer.monotonic_time
 
         yield
