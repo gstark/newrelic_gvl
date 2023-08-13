@@ -1,4 +1,4 @@
-*NOTE: This gem is still in development and untested in a production environment.*
+_NOTE: This gem is still in development and untested in a production environment._
 
 # NewRelic GVL Stats
 
@@ -16,18 +16,28 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-For rails:
+### Rails
 
 ```
 config.middleware.use NewrelicGvl::Rack::Middleware
 ```
 
-For sidekiq:
+### Sidekiq Server:
 
 ```
 Sidekiq.configure_server do |config|
   config.server_middleware do |chain|
-    chain.add NewrelicGvl::Sidekiq::Middleware
+    chain.add NewrelicGvl::Sidekiq::ServerMiddleware
+  end
+end
+```
+
+### Sidekiq Client:
+
+```
+Sidekiq.configure_client do |config|
+  config.client_middleware do |chain|
+    chain.add NewrelicGvl::Sidekiq::ClientMiddleware
   end
 end
 ```
@@ -40,4 +50,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/gstark/newrelic_gvl.
+Bug reports and pull requests are welcome on GitHub at [https://github.com/gstark/newrelic\_gvl](https://github.com/gstark/newrelic_gvl).
